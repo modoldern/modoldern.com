@@ -38,7 +38,7 @@ body.dark {
 
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     font-family: 'Press Start 2P', monospace;
     background: var(--bg);
     color: var(--pixel);

@@ -347,11 +347,7 @@ body.dark .nav button.active {
         font-size: 34px;
     }
 
-    .nav button {
-        font-size: 13px;
-        padding: 9px;
-        flex: 1 1 90px;
-    }
+ 
 }
 
 @media (max-width: 480px) {
@@ -368,11 +364,7 @@ body.dark .nav button.active {
         font-size: 28px;
     }
 
-    .nav button {
-        font-size: 12px;
-        padding: 8px;
-        flex: 1 1 80px;
-    }
+
 }
 
 @media (max-width: 360px) {
@@ -389,9 +381,5 @@ body.dark .nav button.active {
         font-size: 24px;
     }
 
-    .nav button {
-        font-size: 11px;
-        padding: 6px;
-        flex: 1 1 70px;
-    }
+   
 }

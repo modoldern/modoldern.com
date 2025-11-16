@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* --- BASE FONT --- */
+@font-face {
+    font-family: 'BoldPixels';
+    src: url('../fonts/BoldPixels.ttf') format('truetype');
+}
+
+/* --- COLORS --- */
+:root {
+    --bg: #0a2323;
+    --screen: #cfeae7;
+    --screen-dark: #bddbd8;
+    --pixel: #052423;
+    --muted: #6a8a88;
+    --accent: #00a3a3;
+    --btn: #e7f6f5;
+    --width: 600px;
+    --height: calc(var(--width)/1.876);
+    --ngage-dm: calc(var(--width)/7.2016)
+}
+
+body.dark {
+    --bg: #071717;
+    --screen: #162626;
+    --screen-dark: #1b2c2c;
+    --pixel: #d6efef;
+    --muted: #9acccc;
+    --accent: #40ffff;
+    --btn: #123333;
+}
+
+/* --- BASE STILE --- */
+* {
+    transition: background 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Press Start 2P', monospace;
+    background: var(--bg);
+    color: var(--pixel);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- PİKSEL GRID --- */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* --- BOOT ANIMATION --- */
+#boot {
+    position: absolute;
+    inset: 0;
+    background: var(--screen);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    font-size: 20px;
+    color: var(--pixel);
+    letter-spacing: 2px;
+}
+
+@keyframes blink {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1
+    }
+
+    25%,
+    75% {
+        opacity: 0
+    }
+}
+
+#boot span {
+    animation: blink 1s infinite;
+}
+
+/* --- TOP BAR --- */
+.status {
+    padding: 10px 16px;
+    background: linear-gradient(180deg, var(--screen), var(--screen-dark));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+    font-size: 13px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 700;
+    color: var(--pixel);
+    gap: 8px;
+    font-size: 7px;
+}
+
+.left div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--pixel);
+}
+
+.left .dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+    animation: blink 4s infinite;
+    -webkit-animation: blink 4s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+.left .profil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.theme-btn {
+    padding: 6px 10px;
+    background: var(--btn);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--pixel);
+}
+
+.theme-btn:hover {
+    transform: translateY(-1px);
+}
+
+/* --- SCREEN --- */
+.screen {
+    flex: 1;
+    background: linear-gradient(180deg, var(--screen), var(--screen-dark));
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.brand {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--pixel);
+    margin-bottom: 10px;
+}
+
+.clock {
+    text-align: center;
+    font-size: 46px;
+    font-weight: 700;
+    color: var(--pixel);
+    margin-bottom: 15px;
+}
+
+.content {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
+    overflow: auto;
+    font-size: 28px;
+    line-height: 1.4;
+    font-family: 'BoldPixels', monospace;
+    transition: 0.15s ease;
+}
+
+body.dark .content {
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.08);
+}
+
+.item-title {
+    font-size: 30px;
+    margin-bottom: 8px;
+    font-family: 'BoldPixels', monospace;
+}
+
+.line {
+    height: 8px;
+    border-radius: 4px;
+    margin: 6px 0;
+    background: linear-gradient(90deg, #e9f8f7, #d4f0ef);
+}
+
+body.dark .line {
+    background: linear-gradient(90deg, #113939, #1d5656);
+}
+
+/* --- NAV --- */
+.nav {
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    background: linear-gradient(180deg, var(--screen), var(--screen-dark));
+    border-top: 3px solid rgba(0, 0, 0, 0.15);
+    flex-wrap: wrap;
+}
+
+.nav button {
+    flex: 1 1 100px;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    color: var(--pixel);
+    background: var(--btn);
+    box-shadow: 0 2px rgba(0, 0, 0, 0.12);
+}
+
+.nav button.active {
+    background: linear-gradient(180deg, #def8f6, #c7efee);
+}
+
+body.dark .nav button.active {
+    background: linear-gradient(180deg, #214545, #143232);
+}
+
+/* --- SNAKE CANVAS --- */
+.gamecontainer {
+    position: relative;
+    width: var(--width);
+    margin: 0 auto;
+    height: var(--height);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.gamecontainer img {
+    width: 100%;
+    display: block;
+}
+
+.gamecontainer .ngage-btn {
+    position: absolute;
+    left: 10.2%;
+    top: 17.6%;
+    width: var(--ngage-dm);
+    opacity: 0.5;
+    fill: transparent;
+}
+
+
+
+.ngage-btn #btn-up:active, .ngage-btn #btn-right:active, .ngage-btn #btn-down:active, .ngage-btn #btn-left:active {
+    fill: var(--screen-dark);
+}
+
+
+
+#snakeCanvas {
+    position: absolute;
+    top: 10%;
+    width: calc(var(--width)/3.88);
+    height: calc(var(--height)/1.692);
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+    .content {
+        font-size: 24px;
+        padding: 14px;
+    }
+
+    .item-title {
+        font-size: 26px;
+    }
+
+    .clock {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        font-size: 20px;
+        padding: 12px;
+    }
+
+    .item-title {
+        font-size: 24px;
+    }
+
+    .clock {
+        font-size: 34px;
+    }
+
+    .nav button {
+        font-size: 13px;
+        padding: 9px;
+        flex: 1 1 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .item-title {
+        font-size: 18px;
+    }
+
+    .clock {
+        font-size: 28px;
+    }
+
+    .nav button {
+        font-size: 12px;
+        padding: 8px;
+        flex: 1 1 80px;
+    }
+}
+
+@media (max-width: 360px) {
+    .content {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .item-title {
+        font-size: 16px;
+    }
+
+    .clock {
+        font-size: 24px;
+    }
+
+    .nav button {
+        font-size: 11px;
+        padding: 6px;
+        flex: 1 1 70px;
+    }
+}

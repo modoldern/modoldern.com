@@ -38,7 +38,7 @@ body.dark {
 
 body {
     margin: 0;
-    height: auto;
+    min-height: 100vh;
     font-family: 'Press Start 2P', monospace;
     background: var(--bg);
     color: var(--pixel);
@@ -58,6 +58,8 @@ body::before {
     background-size: 20px 20px;
     pointer-events: none;
 }
+
+
 
 a {
     color: var(--accent);
@@ -298,7 +300,10 @@ body.dark .nav button.active {
 
 
 
-.ngage-btn #btn-up:active, .ngage-btn #btn-right:active, .ngage-btn #btn-down:active, .ngage-btn #btn-left:active {
+.ngage-btn #btn-up:active,
+.ngage-btn #btn-right:active,
+.ngage-btn #btn-down:active,
+.ngage-btn #btn-left:active {
     fill: var(--screen-dark);
 }
 
@@ -347,7 +352,7 @@ body.dark .nav button.active {
         font-size: 34px;
     }
 
- 
+
 }
 
 @media (max-width: 480px) {
@@ -381,5 +386,5 @@ body.dark .nav button.active {
         font-size: 24px;
     }
 
-   
+
 }

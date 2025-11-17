@@ -82,6 +82,7 @@ a {
     font-size: 20px;
     color: var(--pixel);
     letter-spacing: 2px;
+    height: 100vh;
 }
 
 @keyframes blink {

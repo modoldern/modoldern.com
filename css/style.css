@@ -19,7 +19,13 @@
     --height: calc(var(--width)/1.876);
     --ngage-dm: calc(var(--width)/7.2016)
 }
+* {
+    scrollbar-width: none;
+}
 
+*::-webkit-scrollbar {
+    display: none;
+}
 body.dark {
     --bg: #071717;
     --screen: #162626;

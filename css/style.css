@@ -119,7 +119,6 @@ a {
     align-items: center;
     border-bottom: 3px solid rgba(0, 0, 0, 0.15);
     font-size: 13px;
-    height: 100%;
 }
 
 .left {
@@ -182,6 +181,7 @@ a {
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
 }
+
 
 .theme-btn {
     padding: 6px 10px;
@@ -392,6 +392,9 @@ body.dark .nav button.active {
 }
 
 @media (max-width: 768px) {
+    .left {
+        zoom: 0.6;
+    }
     .content {
         font-size: 20px;
     }

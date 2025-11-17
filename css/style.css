@@ -38,9 +38,10 @@ body.dark {
 
 body {
     margin: 0;
-    min-height: 100vh;
+    height: auto;
     font-family: 'Press Start 2P', monospace;
     background: var(--bg);
+    background: linear-gradient(180deg, var(--screen), var(--screen-dark));
     color: var(--pixel);
     display: flex;
     flex-direction: column;
@@ -49,8 +50,10 @@ body {
 }
 
 /* --- PİKSEL GRID --- */
+html::before,
 body::before {
     content: "";
+
     position: absolute;
     inset: 0;
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
@@ -102,12 +105,12 @@ a {
 /* --- TOP BAR --- */
 .status {
     padding: 10px 16px;
-    background: linear-gradient(180deg, var(--screen), var(--screen-dark));
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 3px solid rgba(0, 0, 0, 0.15);
     font-size: 13px;
+    height: 100%;
 }
 
 .left {
@@ -178,8 +181,6 @@ a {
 
 /* --- SCREEN --- */
 .screen {
-    flex: 1;
-    background: linear-gradient(180deg, var(--screen), var(--screen-dark));
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -204,9 +205,8 @@ a {
 }
 
 .content {
-    flex: 1;
     background: rgba(255, 255, 255, 0.23);
-    border-radius: 8px;
+
     padding: 16px;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
     overflow: auto;
@@ -214,6 +214,7 @@ a {
     line-height: 1.4;
     font-family: 'BoldPixels', monospace;
     transition: 0.15s ease;
+    height: 100%;
 }
 
 body.dark .content {
@@ -352,6 +353,9 @@ body.dark .nav button.active {
         font-size: 34px;
     }
 
+    :root {
+        --width: 90%;
+    }
 
 }
 

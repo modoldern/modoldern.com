@@ -215,7 +215,8 @@ a {
     line-height: 1.4;
     font-family: 'BoldPixels', monospace;
     transition: 0.15s ease;
-    height: 100%;
+    height:auto;
+    overflow: scroll;
 }
 
 body.dark .content {

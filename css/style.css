@@ -372,7 +372,7 @@ body.dark .nav button.active {
     }
 
     :root {
-        --width: 90%;
+        --width: 400px;
     }
 
 }
@@ -389,6 +389,10 @@ body.dark .nav button.active {
 
     .clock {
         font-size: 28px;
+    }
+
+    :root {
+        --width: 300px;
     }
 
 
@@ -408,5 +412,8 @@ body.dark .nav button.active {
         font-size: 24px;
     }
 
+    :root {
+        --width: 230px;
+    }
 
 }

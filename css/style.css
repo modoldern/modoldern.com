@@ -196,7 +196,8 @@ a {
     display: flex;
     flex-direction: column;
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
+    overflow: scroll;
+    height: auto;
 }
 
 .brand {
@@ -224,8 +225,7 @@ a {
     font-size: 28px;
     line-height: 1.4;
     font-family: 'BoldPixels', monospace;
-    transition: 0.15s ease;
-    height: 100%;
+    height: auto;
 }
 
 body.dark .content {

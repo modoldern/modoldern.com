@@ -45,8 +45,8 @@ body {
     color: var(--pixel);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
 }
 
 /* --- PİKSEL GRID --- */
@@ -191,12 +191,12 @@ a {
 }
 
 /* --- SCREEN --- */
+
 .screen {
     padding: 20px;
     display: flex;
     flex-direction: column;
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);
-    overflow: scroll;
     height: auto;
 }
 
@@ -218,14 +218,13 @@ a {
 
 .content {
     background: rgba(255, 255, 255, 0.23);
-
     padding: 16px;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
-    overflow: auto;
     font-size: 28px;
     line-height: 1.4;
     font-family: 'BoldPixels', monospace;
-    height: auto;
+    height: 60vh;
+    overflow-y: scroll;
 }
 
 body.dark .content {

@@ -222,10 +222,22 @@ body.dark .content {
     box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.08);
 }
 
-.item-title {
+.item-title-desk {
     font-size: 30px;
     margin-bottom: 8px;
     font-family: 'BoldPixels', monospace;
+}
+
+.item-title-mb {
+    font-size: 30px;
+    margin-bottom: 8px;
+    font-family: 'BoldPixels', monospace;
+    display: none;
+}
+
+.item-title-mb span {
+    filter: grayscale(100%);
+    -webkit-filter: invert(100%);
 }
 
 .line {
@@ -330,7 +342,7 @@ body.dark .nav button.active {
         padding: 14px;
     }
 
-    .item-title {
+    .item-title-desk {
         font-size: 26px;
     }
 
@@ -345,7 +357,13 @@ body.dark .nav button.active {
         padding: 12px;
     }
 
-    .item-title {
+    .item-title-desk {
+
+        display: none;
+    }
+
+    .item-title-mb {
+        display: block;
         font-size: 24px;
     }
 
@@ -365,7 +383,7 @@ body.dark .nav button.active {
         padding: 10px;
     }
 
-    .item-title {
+    .item-title-mb {
         font-size: 18px;
     }
 
@@ -382,7 +400,7 @@ body.dark .nav button.active {
         padding: 8px;
     }
 
-    .item-title {
+    .item-title-mb {
         font-size: 16px;
     }
 

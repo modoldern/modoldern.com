@@ -19,6 +19,7 @@
     --height: calc(var(--width)/1.876);
     --ngage-dm: calc(var(--width)/7.2016)
 }
+
 * {
     scrollbar-width: none;
 }
@@ -26,6 +27,7 @@
 *::-webkit-scrollbar {
     display: none;
 }
+
 body.dark {
     --bg: #071717;
     --screen: #162626;
@@ -224,7 +226,7 @@ a {
 
 .content {
     background: rgba(255, 255, 255, 0.23);
-    padding: 16px;
+    padding: 20px;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
     font-size: 28px;
     line-height: 1.4;
@@ -233,11 +235,25 @@ a {
     overflow-y: scroll;
 }
 
+.content ul {
+    margin: 0;
+    padding: 16px;
+}
+
 body.dark .content {
     background: rgba(0, 0, 0, 0.35);
     box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.08);
 }
 
+.item-title-desk,
+.item-title-desk {
+    font-size: 30px;
+    margin-bottom: 8px;
+    font-family: 'BoldPixels', monospace;
+}
+
+.item-title,
+.item-title-desk,
 .item-title-desk {
     font-size: 30px;
     margin-bottom: 8px;
@@ -245,9 +261,6 @@ body.dark .content {
 }
 
 .item-title-mb {
-    font-size: 30px;
-    margin-bottom: 8px;
-    font-family: 'BoldPixels', monospace;
     display: none;
 }
 
@@ -367,7 +380,6 @@ body.dark .nav button.active {
 @media (max-width: 1024px) {
     .content {
         font-size: 24px;
-        padding: 14px;
     }
 
     .item-title-desk {
@@ -382,7 +394,6 @@ body.dark .nav button.active {
 @media (max-width: 768px) {
     .content {
         font-size: 20px;
-        padding: 12px;
     }
 
     .item-title-desk {
@@ -406,14 +417,7 @@ body.dark .nav button.active {
 }
 
 @media (max-width: 480px) {
-    .content {
-        font-size: 16px;
-        padding: 10px;
-    }
 
-    .item-title-mb {
-        font-size: 18px;
-    }
 
     .clock {
         font-size: 28px;
@@ -427,18 +431,7 @@ body.dark .nav button.active {
 }
 
 @media (max-width: 360px) {
-    .content {
-        font-size: 14px;
-        padding: 8px;
-    }
 
-    .item-title-mb {
-        font-size: 16px;
-    }
-
-    .clock {
-        font-size: 24px;
-    }
 
     :root {
         --width: 230px;

@@ -1,0 +1,30 @@
+{
+    "email": {
+        "type": "email",
+        "label": "Email",
+        "value": "support_secluding234@simplelogin.com",
+        "display": "support_secluding234@simplelogin.com",
+        "icon": "mail"
+    },
+    "linkedin": {
+        "type": "link",
+        "label": "LinkedIn",
+        "value": "https://www.linkedin.com/in/modoldern",
+        "display": "Rashad Kurbanov",
+        "icon": "linkedin"
+    },
+    "github": {
+        "type": "link",
+        "label": "GitHub",
+        "value": "https://github.com/modoldern",
+        "display": "resadhusenli",
+        "icon": "github"
+    },
+    "phone": {
+        "type": "phone",
+        "label": "Phone",
+        "value": "+995555378697",
+        "display": "+995 555 37 86 97",
+        "icon": "phone"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "email": {
+        "type": "email",
+        "label": "el-fosta",
+        "value": "support_secluding234@simplelogin.com",
+        "display": "<span class='latin'>support_secluding234@simplelogin.com</span>",
+        "icon": "mail"
+    },
+    "linkedin": {
+        "type": "link",
+        "label": "linkdini",
+        "value": "https://www.linkedin.com/in/modoldern",
+        "display": "<span class='latin'>Rashad Kurbanov</span>",
+        "icon": "linkedin"
+    },
+    "github": {
+        "type": "link",
+        "label": "githabi",
+        "value": "https://github.com/modoldern",
+        "display": "<span class='latin'>resadhusenli</span>",
+        "icon": "github"
+    },
+    "phone": {
+        "type": "phone",
+        "label": "telefoni",
+        "value": "+995555378697",
+        "display": "+995 555 37 86 97",
+        "icon": "phone"
+    }
+}

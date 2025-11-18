@@ -1,0 +1,17 @@
+{
+    "მარნეულის საზოგადოებრივი კოლეჯი": {
+        "label": "marneulis sazogadoebrivi koleji",
+        "value": "https://msc.edu.ge/",
+        "display": "<span class='latin'>msc.edu.ge</span>"
+    },
+    "KuraX P2P Exchange": {
+        "label": "<span class='latin'>KuraX P2P Exchange</span> (araa dasrulebuli)",
+        "value": "https://kurax.io/",
+        "display": "<span class='latin'>kuraX.io</span>"
+    },
+    "iadigarov'ebis xsovnas": {
+        "label": "iadigarov'ebis xsovnas (araa dasrulebuli)",
+        "value": "https://yadigarovlar.org/",
+        "display": "<span class='latin'>yadigarovlar.org</span>"
+    }
+}

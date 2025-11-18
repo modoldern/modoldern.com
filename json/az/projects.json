@@ -1,0 +1,17 @@
+{
+    "Marneuli İctimai Kolleci": {
+        "label": "Marneuli İctimai Kolleci",
+        "value": "https://msc.edu.ge/",
+        "display": "msc.edu.ge"
+    },
+    "KuraX P2P Exchange": {
+        "label": "KuraX P2P Exchange (bitməyib)",
+        "value": "https://kurax.io/",
+        "display": "kuraX.io"
+    },
+    "Yadigarovların xatirəsinə": {
+        "label": "Yadigarovların xatirəsinə (bitməyib)",
+        "value": "https://yadigarovlar.org/",
+        "display": "yadigarovlar.org"
+    }
+}

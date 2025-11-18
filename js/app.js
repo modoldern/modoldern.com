@@ -1,7 +1,11 @@
+(async () => {
+let currentLang = localStorage.getItem("lang") || "az";
+let langUI = {};
+
 const contentEl = document.getElementById("content");
 
 // Boot animation
-setTimeout(() => document.getElementById("boot").style.display = "none", 1500);
+setTimeout(() => document.getElementById("boot").style.display = "none");
 
 // --- THEME ---
 let theme = localStorage.getItem("theme") || "dark";
@@ -19,6 +23,32 @@ themeBtn.onclick = () => {
     localStorage.setItem("theme", theme);
     updateThemeButton();
 };
+function updateFont(lang) {
+    document.body.classList.remove("font-az", "font-en", "font-ge");
+
+    if (lang === "az") document.body.classList.add("font-az");
+    if (lang === "en") document.body.classList.add("font-en");
+    if (lang === "ka") document.body.classList.add("font-ge");
+}
+
+async function loadUILang(lang) {
+    updateFont(lang); 
+    const res = await fetch(`lang/${lang}.json`);
+    langUI = await res.json();
+
+    currentLang = lang;
+    localStorage.setItem("lang", lang);
+
+    const titleEl = document.querySelector(".item-title");
+    if (titleEl) titleEl.textContent = langUI["welcome"];
+    
+
+    document.getElementById("btn-cv").textContent = langUI["cv"];
+    document.getElementById("btn-projects").textContent = langUI["projects"];
+    document.getElementById("btn-contact").textContent = langUI["contact"];
+    document.getElementById("btn-faq").textContent = langUI["faq"];
+    document.getElementById("btn-games").textContent = langUI["games"];
+}
 
 // --- CLOCK ---
 function updateClock() {
@@ -27,7 +57,8 @@ function updateClock() {
         `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
 }
 updateClock();
-setInterval(updateClock, 30000);
+setInterval(updateClock, 60000);
+
 
 // --- BUTTONS ---
 const buttons = {
@@ -48,89 +79,76 @@ function activate(name) {
 
 // function FAQ
 async function loadFAQ() {
-    const res = await fetch("json/faq.json");
+    const res = await fetch(`json/${currentLang}/faq.json`);
     const data = await res.json();
 
-    let html = `<div class="item-title">FAQ</div>`;
+    let html = `<div class="item-title">${langUI["faq"]}</div>`;
 
     data.forEach(item => {
         html += `
             <details>
                 <summary><b>${item.sual}</b></summary>
                 ${item.cavab}
-            </details>
-        `;
+            </details>`;
     });
-html += `</ul><div class="line" style="width:70%"></div>`;
+
+    html += `<div class="line" style="width:70%"></div>`;
     contentEl.innerHTML = html;
 }
+
 // function FAQ - end
 // function CV
 async function loadCV() {
-    const res = await fetch("json/cv.json");
+    const res = await fetch(`json/${currentLang}/cv.json`);
     const data = await res.json();
 
-    let html = `<div class="item-title">CV</div>`;
+    let html = `<div class="item-title">${langUI["cv"]}</div>`;
     for (let key in data) {
         html += `<strong>${key}:</strong> ${data[key]}<br>`;
     }
     html += `<div class="line" style="width:80%"></div>`;
-
     contentEl.innerHTML = html;
 }
+
 // function CV - end
 // function Projects
 async function loadProjects() {
-    const res = await fetch("json/projects.json");
+    const res = await fetch(`json/${currentLang}/projects.json`);
     const data = await res.json();
 
-    let html = `<div class="item-title">Proektlər</div><ul>`;
-
-     for (const key in data) {
-        const item = data[key];
-
-        // href maker
-        let href = item.value;
-
-        // name
-        const display = item.display || item.value;
-        html += `<li>${item.label} - <a href="${href}" target="_blank">${display}</a></li>`;
-     
-    }
-
-    html += `</ul><div class="line" style="width:70%"></div>`;
-
-    contentEl.innerHTML = html;
-}
-// function Projects - end
-// function Contact
-async function loadContact() {
-    const res = await fetch("json/contact.json");
-    const data = await res.json();
-
-    let html = `<div class="item-title">Əlaqə</div>`;
+    let html = `<div class="item-title">${langUI["projects"]}</div><ul>`;
 
     for (const key in data) {
         const item = data[key];
+        html += `<li>${item.label} - <a href="${item.value}" target="_blank">${item.display}</a></li>`;
+    }
 
-        // href maker
+    html += `</ul><div class="line" style="width:70%"></div>`;
+    contentEl.innerHTML = html;
+}
+
+// function Projects - end
+// function Contact
+async function loadContact() {
+    const res = await fetch(`json/${currentLang}/contact.json`);
+    const data = await res.json();
+
+    let html = `<div class="item-title">${langUI["contact"]}</div>`;
+
+    for (const key in data) {
+        const item = data[key];
         let href = item.value;
+
         if (item.type === "phone") href = `tel:${item.value}`;
         if (item.type === "email") href = `mailto:${item.value}`;
 
-        // name
-        const display = item.display || item.value;
-
-        html += `
-            <strong>${item.label}:</strong>
-            <a href="${href}" target="_blank">${display}</a><br>
-        `;
+        html += `<strong>${item.label}:</strong> <a href="${href}" target="_blank">${item.display}</a><br>`;
     }
 
     html += `<div class="line" style="width:70%"></div>`;
-
     contentEl.innerHTML = html;
 }
+
 // function Contact - end
 
 // function Page
@@ -147,6 +165,8 @@ async function loadSection(name) {
         else if (name === "contact") await loadContact();
         else if (name === "games") {const html = await fetch("pages/games.html").then(r=> r.text());
         contentEl.innerHTML = html;
+         const titleDesk = document.querySelector(".item-title-desk");
+            if (titleDesk) titleDesk.innerHTML = langUI["desk"];
         }
 
         contentEl.style.opacity = 1;
@@ -166,8 +186,17 @@ buttons.contact.onclick = () => loadSection("contact");
 buttons.faq.onclick = () => loadSection("faq");
 buttons.games.onclick = () => loadSection("games");
 
-// First load screen
-loadSection("cv");
+
+// LANG SELECT EVENT
+const selectEl = document.getElementById("langSelect");
+selectEl.value = currentLang;
+
+selectEl.onchange = async () => {
+    await loadUILang(selectEl.value); 
+    await loadSection("cv");          
+};
+
+
 
 // --- SNAKE GAME ---
 function startSnake() {
@@ -282,5 +311,10 @@ function startSnake() {
 }
 
 
+// --- PAGE LOAD ---
+window.addEventListener("DOMContentLoaded", async () => {
+    await loadUILang(currentLang);
+    await loadSection("cv");       
+});
 
-
+})();

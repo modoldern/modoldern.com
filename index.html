@@ -11,27 +11,38 @@
 
 <body class="{theme}">
 
-    <div id="boot">
+    <div id="boot" class="font-safe">
         BOOTING<span>_</span>
     </div>
 
     <div class="status">
-        <div class="left">
+        <div class="left font-safe">
             <a href="/"><img class="profil" src="images/indir.png" alt="">
                 <div>
                     <span class="dot"></span>
                     <h1>Rashad</h1>
                 </div>
             </a>
-
         </div>
-        <button class="theme-btn" id="themeBtn">Dark</button>
+
+        <div style="display:flex; align-items:center; gap:10px;">
+            <div class="langselect-wrapper">
+                <select id="langSelect" class="font-safe">
+                    <option value="az">AZ</option>
+                    <option value="en">EN</option>
+                    <option value="ka">KA</option>
+                </select>
+            </div>
+
+            <button class="theme-btn font-safe" id="themeBtn">Dark</button>
+        </div>
     </div>
 
+
     <div class="screen">
-        <div class="brand">NOKIA RETRO</div>
-        <div class="clock" id="clock">12:00</div>
-        <div class="item-title">Xoş gəldin</div>
+        <div class="brand font-safe">NOKIA RETRO</div>
+        <div class="clock font-safe" id="clock">12:00</div>
+        <div class="item-title"></div>
         <div class="line" style="width:60%"></div>
         <div class="content" id="content">
 
@@ -39,11 +50,11 @@
     </div>
 
     <div class="nav">
-        <button id="btn-cv">CV</button>
-        <button id="btn-projects">Proektlər</button>
-        <button id="btn-contact">Əlaqə</button>
-        <button id="btn-faq">FAQ</button>
-        <button id="btn-games">İlan oyunu</button>
+        <button id="btn-cv"></button>
+        <button id="btn-projects"></button>
+        <button id="btn-contact"></button>
+        <button id="btn-faq"></button>
+        <button id="btn-games"></button>
     </div>
 
     <script src="js/app.js"></script>

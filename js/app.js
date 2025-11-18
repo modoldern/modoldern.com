@@ -5,7 +5,7 @@ let langUI = {};
 const contentEl = document.getElementById("content");
 
 // Boot animation
-setTimeout(() => document.getElementById("boot").style.display = "none", 1500);
+setTimeout(() => document.getElementById("boot").style.display = "none");
 
 // --- THEME ---
 let theme = localStorage.getItem("theme") || "dark";

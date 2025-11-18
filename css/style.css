@@ -158,8 +158,7 @@ a {
 
 .left {
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    align-items: end;
     font-weight: 700;
     color: var(--pixel);
     gap: 8px;
@@ -422,6 +421,47 @@ body.dark .nav button.active {
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
 }
+
+.content-wrapper {
+    position: relative;
+}
+
+#content {
+    position: relative;
+    z-index: 2;
+}
+
+.kura-burn {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    height: 80%;
+    opacity: 0.04;
+    z-index: 1;
+    pointer-events: none;
+    image-rendering: pixelated;
+    filter: blur(1px) brightness(1.3);
+    animation: burnRotate 6s steps(8) infinite;
+    -webkit-animation: burnRotate 6s steps(8) infinite;
+}
+@keyframes burnRotate {
+    from {
+        transform: translate(0, -50%) rotate(0deg);
+        -webkit-transform: translate(0, -50%) rotate(0deg);
+        -moz-transform: translate(0, -50%) rotate(0deg);
+        -ms-transform: translate(0, -50%) rotate(0deg);
+        -o-transform: translate(0, -50%) rotate(0deg);
+}
+
+    to {
+        transform: translate(0, -50%) rotate(360deg);
+        -webkit-transform: translate(0, -50%) rotate(360deg);
+        -moz-transform: translate(0, -50%) rotate(360deg);
+        -ms-transform: translate(0, -50%) rotate(360deg);
+        -o-transform: translate(0, -50%) rotate(360deg);
+}
+}
+
 
 /* --- MEDIA QUERIES --- */
 @media (max-width: 1024px) {

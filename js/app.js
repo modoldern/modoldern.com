@@ -167,6 +167,8 @@ async function loadSection(name) {
         contentEl.innerHTML = html;
          const titleDesk = document.querySelector(".item-title-desk");
             if (titleDesk) titleDesk.innerHTML = langUI["desk"];
+        const titleMb = document.querySelector(".item-title-mb");
+            if (titleMb) titleMb.innerHTML = langUI["mb"];
         }
 
         contentEl.style.opacity = 1;

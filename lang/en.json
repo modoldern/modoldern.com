@@ -1,9 +1,10 @@
 {
     "desk" : "Play with the arrow keys on the keyboard",
+    "mb" : "Play with Ngage's '<span class='joystik'>🕹️</span>' buttons",
     "welcome": "Welcome",
     "cv": "CV",
     "projects": "Projects",
     "contact": "Contact",
     "faq": "FAQ",
-    "games": "Snake Game"
+    "games": "Snake"
 }

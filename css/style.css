@@ -447,7 +447,7 @@ body.dark .nav button.active {
 
     body.font-ge .latin {
         font-family: "Press Start 2P", sans-serif !important;
-        font-size: 1.1rem !important;
+        font-size: 0.825rem !important;
 
     }
 
@@ -464,6 +464,27 @@ body.dark .nav button.active {
 
     .profil {
         zoom: 0.6;
+    }
+
+    body.font-az * {
+        font-family: "BoldPixels", sans-serif;
+        font-size: 1.2rem;
+    }
+
+    body.font-en * {
+        font-family: "Press Start 2P", sans-serif;
+        font-size: 0.66rem;
+    }
+
+    body.font-ge * {
+        font-family: "GeoPixels", sans-serif;
+        font-size: 0.96rem;
+    }
+
+    body.font-ge .latin {
+        font-family: "Press Start 2P", sans-serif !important;
+        font-size: 0.66rem !important;
+
     }
 
     .font-safe,

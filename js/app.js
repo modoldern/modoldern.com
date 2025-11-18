@@ -154,6 +154,9 @@ async function loadContact() {
 // function Page
 async function loadSection(name) {
     activate(name);
+    
+    localStorage.setItem("activeSection", name); 
+
     contentEl.style.opacity = 0;
     contentEl.style.transform = "translateY(6px)";
 
@@ -195,7 +198,8 @@ selectEl.value = currentLang;
 
 selectEl.onchange = async () => {
     await loadUILang(selectEl.value); 
-    await loadSection("cv");          
+    const currentActiveSection = localStorage.getItem("activeSection") || "cv";
+    await loadSection(currentActiveSection);
 };
 
 
@@ -315,8 +319,10 @@ function startSnake() {
 
 // --- PAGE LOAD ---
 window.addEventListener("DOMContentLoaded", async () => {
+    const initialSection = localStorage.getItem("activeSection") || "cv";
+
     await loadUILang(currentLang);
-    await loadSection("cv");       
+    await loadSection(initialSection);
 });
 
 })();

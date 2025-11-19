@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} ^/robots\.txt$ [NC]
+RewriteRule ^robots\.txt$ /robots-real.txt [L]

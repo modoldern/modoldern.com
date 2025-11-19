@@ -435,7 +435,7 @@ body.dark .nav button.active {
     position: absolute;
     top: 50%;
     right: 5%;
-    height: 80%;
+    height: 60%;
     opacity: 0.2;
     z-index: 1;
     pointer-events: none;

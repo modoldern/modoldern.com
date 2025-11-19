@@ -113,6 +113,10 @@ a {
     text-decoration: none;
 }
 
+.datajson li {
+    margin-left: 10px
+}
+
 /* --- BOOT ANIMATION --- */
 #boot {
     position: absolute;
@@ -123,7 +127,8 @@ a {
     align-items: center;
     flex-direction: column;
     z-index: 10;
-    font-size: 1.25rem;
+    font-size: 1.8rem !important;
+    font-family: "BoldPixels" !important;
     color: var(--pixel);
     letter-spacing: 2px;
     height: 100vh;
@@ -548,7 +553,7 @@ body.dark .nav button.active {
             -moz-transform: translate(-50%, -30%) rotate(0deg);
             -ms-transform: translate(-50%, -30%) rotate(0deg);
             -o-transform: translate(-50%, -30%) rotate(0deg);
-}
+        }
 
         to {
             transform: translate(-50%, -30%) rotate(360deg);
@@ -556,7 +561,7 @@ body.dark .nav button.active {
             -moz-transform: translate(-50%, -30%) rotate(360deg);
             -ms-transform: translate(-50%, -30%) rotate(360deg);
             -o-transform: translate(-50%, -30%) rotate(360deg);
-}
+        }
     }
 
     .item-title-desk {

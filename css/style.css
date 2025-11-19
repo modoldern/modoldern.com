@@ -470,7 +470,7 @@ body.dark .nav button.active {
 
 
 /* --- MEDIA QUERIES --- */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
 
     .clock {
         font-size: 2.375rem !important;

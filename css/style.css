@@ -428,7 +428,7 @@ body.dark .nav button.active {
 
 #content {
     position: relative;
-    z-index: 2;
+    z-index: 4;
 }
 
 .kura-burn {

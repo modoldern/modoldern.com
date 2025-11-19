@@ -343,6 +343,7 @@ body.dark .line {
     bottom: 0;
     width: 100%;
     gap: 8px;
+    z-index: 8;
     background: linear-gradient(180deg, var(--screen), var(--screen-dark));
     border-top: 3px solid rgba(0, 0, 0, 0.15);
     flex-wrap: wrap;

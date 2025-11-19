@@ -498,6 +498,8 @@ body.dark .nav button.active {
         font-size: 0.825rem !important;
     }
 
+   
+
 }
 
 @media (max-width: 768px) {
@@ -535,7 +537,7 @@ body.dark .nav button.active {
     }
 
     .kura-burn {
-        height: 80%;
+        height: 70%;
     }
 
     .item-title-desk {

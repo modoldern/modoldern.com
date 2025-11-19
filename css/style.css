@@ -434,7 +434,7 @@ body.dark .nav button.active {
 .kura-burn {
     position: absolute;
     top: 50%;
-    right: 5%;
+    right: 10%;
     height: 60%;
     opacity: 0.2;
     z-index: 1;

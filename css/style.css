@@ -498,7 +498,7 @@ body.dark .nav button.active {
         font-size: 0.825rem !important;
     }
 
-   
+
 
 }
 
@@ -537,7 +537,26 @@ body.dark .nav button.active {
     }
 
     .kura-burn {
-        height: 70%;
+        height: 60%;
+        top: 30%;
+    }
+
+    @keyframes burnRotate {
+        from {
+            transform: translate(-50%, -30%) rotate(0deg);
+            -webkit-transform: translate(-50%, -30%) rotate(0deg);
+            -moz-transform: translate(-50%, -30%) rotate(0deg);
+            -ms-transform: translate(-50%, -30%) rotate(0deg);
+            -o-transform: translate(-50%, -30%) rotate(0deg);
+}
+
+        to {
+            transform: translate(-50%, -30%) rotate(360deg);
+            -webkit-transform: translate(-50%, -30%) rotate(360deg);
+            -moz-transform: translate(-50%, -30%) rotate(360deg);
+            -ms-transform: translate(-50%, -30%) rotate(360deg);
+            -o-transform: translate(-50%, -30%) rotate(360deg);
+}
     }
 
     .item-title-desk {
